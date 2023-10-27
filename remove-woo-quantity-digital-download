@@ -1,0 +1,19 @@
+///// When using woo product attributes for digital-download or physicaL product options Add the JS Code, given below, to the:
+
+Theme Options -> Integration -> Head /////
+
+<script>
+(function($) {
+	$(document).ready(function() {
+		var fh_product_type = "";
+		$("#pa_product-type").change(function () {
+			fh_product_type = this.value;
+			if(fh_product_type == "10-digital-only") {
+				$(".variations_form.cart .quantity").attr("style", "visibility: hidden;");
+			} else {
+				$(".variations_form.cart .quantity").attr("style", "visibility: visible;");
+			}
+		});
+	});
+})(jQuery);
+</script>
